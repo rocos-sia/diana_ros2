@@ -3,9 +3,9 @@
 <package format="3">
   <name>diana_hardware</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="992534544@qq.com">think</maintainer>
-  <license>TODO: License declaration</license>
+  <description>diana_hardware provides hardware interfaces for using Agile Robots Diana 7 with ros2_control</description>
+  <maintainer email="luoyang@sia.cn">Yang Luo</maintainer>
+  <license>Apache 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
