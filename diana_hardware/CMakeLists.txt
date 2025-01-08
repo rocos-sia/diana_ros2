@@ -17,6 +17,9 @@ find_package(rclcpp_action REQUIRED)
 find_package(hardware_interface REQUIRED)
 find_package(pluginlib REQUIRED)
 
+add_subdirectory(DianaApi)
+
+
 add_library(diana_hardware SHARED
         src/robot.cpp
         src/diana_hardware_interface.cpp
@@ -27,6 +30,8 @@ target_include_directories(
   PRIVATE
     include
 )
+
+target_link_libraries(diana_hardware libDianaApi)
 
 ament_target_dependencies(
         diana_hardware

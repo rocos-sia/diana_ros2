@@ -30,10 +30,46 @@
 
 #include <rclcpp/logger.hpp>
 
+#include "DianaAPI.h"
+
 namespace diana_hardware {
 
 class Robot {
  public:
-    explicit Robot(std::string robot_ip);
+
+    explicit Robot(std::string  robot_ip, const rclcpp::Logger& logger);
+
+    virtual ~Robot();
+
+    /// Stops the continuous communication read with the connected robot
+    virtual void stopRobot();
+
+    /// Starts torque control
+    virtual void initializeTorqueInterface();
+
+    /// Starts joint velocity control
+    virtual void initializeJointVelocityInterface();
+
+    /// Starts joint position control
+    virtual void initializeJointPositionInterface();
+
+    /// Starts cartesian velocity control
+    virtual void initializeCartesianVelocityInterface();
+
+    /// Starts cartesian pose control
+    virtual void initializeCartesianPoseInterface();
+
+
+protected:
+    Robot() = default;
+
+private:
+    std::string ip_addr_str_ {"192.168.10.75"}; // Store the IP address string of Diana, default "192.168.10.75"
+
+
+    static void errorControl(int e, const char* strIpAddress);
+    static void logRobotState(StrRobotStateInfo *pinfo, const char* strIpAddress);
+
+
 };
 }  // namespace diana_hardware
