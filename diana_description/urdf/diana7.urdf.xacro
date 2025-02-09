@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="diana7">
+    <xacro:include filename="$(find diana_description)/urdf/diana7_macro.urdf.xacro"/>
+
+    <xacro:include filename="$(find diana_description)/urdf/diana7.ros2_control.xacro"/>
+
+    <link name="world"/>
+
+    <xacro:diana7 parent="world">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:diana7>
+
+    <xacro:diana_ros2_control/>
+
+</robot>

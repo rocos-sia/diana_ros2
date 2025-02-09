@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="diana_ros2_control" >
+
+    <ros2_control name="DianaHardwareInterface" type="system" >
+      <hardware>
+        <plugin>mock_components/GenericSystem</plugin>
+        <param name="mock_sensor_commands">false</param>
+        <param name="state_following_offset">0.0</param>
+        <param name="calculate_dynamics">true</param>
+      </hardware>
+
+      <xacro:macro name="configure_joint" params="joint_name">
+        <joint name="${joint_name}">
+          <command_interface name="position" />
+
+          <state_interface name="position" />
+        </joint>
+      </xacro:macro>
+
+      <xacro:configure_joint joint_name="joint_1" />
+      <xacro:configure_joint joint_name="joint_2" />
+      <xacro:configure_joint joint_name="joint_3" />
+      <xacro:configure_joint joint_name="joint_4" />
+      <xacro:configure_joint joint_name="joint_5" />
+      <xacro:configure_joint joint_name="joint_6" />
+      <xacro:configure_joint joint_name="joint_7" />
+
+    </ros2_control>
+
+  </xacro:macro>
+ 
+</robot>
