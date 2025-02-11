@@ -1,9 +1,0 @@
-controller_manager:
-  ros__parameters:
-    update_rate: 1000 # hz
-
-    joint_trajectory_controller:
-      type: joint_trajectory_controller/JointTrajectoryController
-
-    joint_state_controller:
-      type: joint_state_controller/JointStateBroadcaster
