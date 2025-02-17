@@ -3,4 +3,5 @@
 <!-- [![CI](https://github.com/frankaemika/franka_ros2/actions/workflows/ci.yml/badge.svg)](https://github.com/frankaemika/franka_ros2/actions/workflows/ci.yml) -->
 
 ## Table of Contents
-![Demo](https://github.com/rocos-sia/diana_ros2/blob/Moveit2/videos/1.mp4)
+![Demo](https://github.com/rocos-sia/diana_ros2/blob/Moveit2/videos/video.gif)
+
